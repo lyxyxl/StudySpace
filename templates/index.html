@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="topbarimage">
+        <img class="profile" src="https://i.pinimg.com/originals/11/1d/0d/111d0d822f1870b37ef735bffcce0e86.png">
+    </div>
+
+    <div class="maincontainer">
+    <div class="titletext">
+        <p class="headtitle">{{ name }} | Home Page</p>
+            <span class="todaydate">{{ formatted_date }}</span>
+
+    </div>
+
+
+        <div class="quotetitle">
+            <p class="quotetitletext">
+                “Life is suffering. It is hard. The world is cursed. But still, you find reasons to keep living.”
+                <span style="display: block; text-align: right">— "Princess Mononoke", 1997.</span>
+            </p>
+        </div>
+
+        <div class="separator"></div>
+
+
+
+        <div class="linkstitle">
+            <p class="linkstabletext">
+                <img class="decemoji" src="/static/faviconglass.ico?v=2">
+                Quick Links
+            <button id="openbuttonlinks" onclick="openlinksForm()">Edit</button>
+        </p>
+
+        <script>
+            function openlinksForm() {
+              document.getElementById("links-form").style.display = "block";
+            }
+
+            function closelinksForm() {
+              document.getElementById("links-form").style.display = "none";
+            }
+        </script>
+
+
+        <div class="break"></div>
+        <div class="linkstablecontainer">
+            <table class="linkstable">
+                <tbody>
+                    {% for link in links %}
+                        <tr class="linkrow" id="{{ link.link_id }}">
+                            <td class="linktd"><a href="{{ link.url }}">- {{ link.name }}</a></td>
+                        </tr>
+                    {% endfor %}
+            </tbody>
+            </table>
+        </div>
+        </div>
+
+        <div class="tabletitle">
+            <p class="tabletitletext">
+                <img class="decemoji" src="/static/faviconherb.ico?v=2">
+                To Do List
+                <button id="openbuttontodo" onclick="opentodoForm()">Edit</button>
+            </p>
+
+            <script>
+                function opentodoForm() {
+                  document.getElementById("todo-form").style.display = "block";
+                }
+
+                function closetodoForm() {
+                  document.getElementById("todo-form").style.display = "none";
+                }
+            </script>
+
+        </div>
+        <table class="todotable">
+            <colgroup>
+                <col span="1" style="width: 50%;">
+                <col span="1" style="width: 25%;">
+                <col span="1" style="width: 20%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="todoth">Task</th>
+                    <th class="todoth">Deadline</th>
+                    <th class="todoth">Days Left</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for activities in newtodolist %}
+                        <tr class="activityrow" id="{{ activities.activity_id }}">
+                            <td class="todotd">{{ activities.activity }}</td>
+                            <td class="todotd">{{ activities.deadline}}</td>
+                            <td class="todotd">{{ activities.daysleft }}</td>
+                        </tr>
+                    {% endfor %}
+            </tbody>
+
+            <script>
+                var newtodolist = {{ newtodolist|tojson }};
+
+                function createListener(row) {
+                    return function(ev) {
+                        row.classList.toggle("activityrowchecked");
+                    };
+                }
+
+                window.onload = function() {
+                    for (let i = 0; i < newtodolist.length; i++) {
+                        let row = document.getElementById(newtodolist[i].activity_id);
+                        row.addEventListener('click', createListener(row), false);
+
+
+                    }
+                }
+            </script>
+
+        </table>
+    </div>
+
+
+
+<div class="todolistpopup form-container" id="todo-form">
+    <form action="/todolistadd" method="post">
+        <p class="formaddtitle">Add a task</p>
+        <button type="button" class="cancelbtn" onclick="closetodoForm()">&times;</button><br>
+
+
+        <label for="task"><b>Task</b></label>
+        <input type="text" placeholder="Enter Task" name="task" required><br>
+
+        <label for="deadline"><b>Deadline</b></label>
+        <input type="date" placeholder="Deadline" name="deadline" required><br>
+
+        <button type="submit" class="submitbtn">Add</button>
+
+    </form>
+
+    <form action="deleteactivityrow" method="post">
+        <p class="formdeletetitle">Delete a task</p>
+
+        <select name="activityidtodelete" required>
+            <option value="" disabled selected>Task | Deadline | Days Left</option>
+            {% for activities in newtodolist %}
+                <option value="{{  activities.activity_id }}">{{ activities.activity }} | {{ activities.deadline}} | {{ activities.daysleft }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="submitbtn">Delete</button>
+
+    </form>
+
+</div>
+
+<div class="linkspopup linksform-container" id="links-form">
+    <form action="/linksadd" method="post">
+        <p class="formaddtitle">Add a hyperlink</p>
+        <button type="button" class="cancelbtn" onclick="closelinksForm()">&times;</button><br>
+
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" required><br>
+
+        <label for="url"><b>URL</b></label>
+        <input type="text" placeholder="Enter URL" name="url" required><br>
+
+        <button type="submit" class="submitbtn">Add</button>
+
+    </form>
+
+    <form action="/deletelink" method="post">
+        <p class="formdeletetitle">Delete a hyperlink</p>
+
+        <select name="linkidtodelete" required>
+            <option value="" disabled selected>Name</option>
+            {% for link in links %}
+                <option value="{{  link.link_id }}">{{ link.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="submitbtn">Delete</button>
+
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Reset Password
+{% endblock %}
+
+{% block main %}
+    <div class="login-background">
+        <main class="container py-5 text-center">
+
+            <div class="centercontainer">
+                <form action="/forgor" method="post">
+                    <div class="mb-3" style="font-family: 'Frank Ruhl Libre', serif; font-weight: bold; font-size: xx-large">
+                        Confirm your identity
+                    </div>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="name" placeholder="Enter your name" type="text">
+                    </div>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Confirm</button>
+                </form>
+            </div>
+        </main>
+    </div>
+{% endblock %}

@@ -1,0 +1,329 @@
+nav .navbar-brand
+{
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: large;
+    font-weight: bold
+}
+
+body .login-background
+{
+    background-image: url('https://i.pinimg.com/originals/42/a5/9a/42a59a241113e44f4c4ffcf5746e7b21.jpg');
+    background-position: center;
+    height: 500px;
+    background-size: cover
+}
+
+main .centercontainer
+{
+    padding-top: 4em;
+    text-align: center;
+    font-family:'Inter', sans-serif;
+    font-weight: lighter
+
+}
+
+body .topbarimage
+{
+    background-image: url('https://thematchavibe.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F44c4cd8e-c037-49ed-9781-61e8138c6054%2FEthlu9nVgAAWY4U.jpeg?table=block&id=85948c1f-1d97-4ab2-b9a4-850c8fe94864&spaceId=d606c289-fea7-4e40-acdb-483697d91ac5&width=1390&userId=&cache=v2');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    z-index: 2;
+    position: relative
+
+}
+
+body .profile
+{
+    z-index: 1;
+    position: relative;
+    height: 140px;
+    margin-top: 130px;
+    margin-left: 120px
+}
+
+body .titletext
+{
+    display: flex;
+    height: 100%;
+    padding-top: 70px;
+}
+
+
+body .headtitle
+{
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: x-large;
+    font-weight: bold;
+    display: inline;
+    width: 100%
+}
+
+body .todaydate
+{
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: x-large;
+    font-weight: bold;
+    display: inline;
+    position: flex;
+    justify-content: flex-end;
+    padding-right: 5px
+}
+
+body .maincontainer
+{
+    margin-right: 120px;
+    margin-left: 120px;
+}
+body .quotetitle
+{
+    font-family:'Inter', sans-serif;
+    background-color: #D7E4C0;
+    margin-top: 10px;
+    display: flex
+
+}
+
+body .quotetitletext
+{
+    padding: 12px 16px 14px 20px;
+    font-family: 'Courier Prime', monospace;
+    font-style: italic;
+    margin-bottom: 5px;
+    display: block
+}
+
+body .separator
+{
+    margin-top: 20px;
+    border-bottom: 1px solid;
+    border-color: #939799
+}
+
+body .tabletitle
+{
+    width: 65%;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-left: auto;
+    font-family: "Frank Ruhl Libre", serif;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #C6DCBA;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+
+body .tabletitletext
+{
+    width: 100%;
+    display: inline
+}
+
+body .decemoji
+{
+    height: 25px
+}
+
+#openbuttontodo, #openbuttonlinks
+{
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    text-decoration: underline;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: inline
+}
+
+.todolistpopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 8px solid #b99976;
+    z-index: 9;
+  }
+
+.form-container
+{
+    padding: 15px;
+    background-color: #e5d3b3;
+}
+
+.formaddtitle, .formdeletetitle
+{
+    font-family: "Frank Ruhl Libre", serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.formaddtitle
+{
+    display: inline;
+    width: 100%
+}
+
+.formdeletetitle
+{
+    margin-top: 35px;
+    margin-bottom: 0px
+}
+.form-container .cancelbtn, .linksform-container .cancelbtn
+{
+    display: inline;
+    float: right;
+    border: none;
+}
+
+.form-container input[type=text], .form.container-input[type=date],
+.linksform-container input[type=text]
+{
+    border: 1px solid;
+    margin: 5px 0 8px 5px;
+}
+
+select
+{
+    border: 1px solid;
+    margin-top: 5px;
+}
+
+
+.form-container .submitbtn, .linksform-container .submitbtn
+{
+    float: right;
+    margin-top: 10px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer
+}
+
+
+.todotable
+{
+    width: 65%;
+    margin-right: 0px;
+    margin-left: auto;
+    margin-top: 10px;
+    border: 8px solid;
+    background-color: #e5d3b3;
+    border-color: #b99976;
+    font-size: 17px;
+}
+
+table .todoth, .todotd
+ {
+    padding-left: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    border: 5px solid;
+    border-color: #b99976;
+
+ }
+
+table tr.activityrow:hover
+{
+    background-color: rgb(217, 200, 170);
+}
+
+table tr.activityrowchecked
+{
+    background-color: rgb(217, 200, 170);
+    text-decoration: line-through;
+}
+
+.linkstablecontainer
+{
+    width: 100%;
+}
+
+.linkstable
+{
+    font-family: 'Courier Prime', monospace;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    border: 8px solid;
+    background-color: #FAEED1;
+    border-color: #FAEED1;
+    width: 100%
+}
+
+table .linktd
+{
+    padding-left: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+a {
+    color: #749BC2;
+    text-decoration: none
+}
+
+a:link {
+    color: #749BC2;
+}
+
+a:hover {
+    color: #4682A9;
+}
+
+
+body .linkstitle
+{
+    width: 30%;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: auto;
+    font-family: "Frank Ruhl Libre", serif;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #C6DCBA;
+    float: left;
+    padding: 3%;
+    display: flex;
+    flex-wrap: wrap
+}
+
+body .linkstabletext
+{
+    width: 100%;
+    margin-top: 0px;
+    display: inline;
+    flex-grow: 1
+}
+
+
+body .break
+{
+    flex-basis: 100%;
+    width: 0
+}
+
+.linkspopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 8px solid #FAEED1;
+    z-index: 9;
+  }
+
+.linksform-container
+{
+    width: 300px;
+    padding: 15px;
+    background-color: #e5d3b3;
+}

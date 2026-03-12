@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <div class="login-background">
+        <main class="container py-5 text-center">
+
+            <div class="centercontainer">
+                <form action="/register" method="post">
+                    <div class="mb-3" style="font-family: 'Frank Ruhl Libre', serif; font-weight: bold; font-size: xx-large">
+                        Register
+                    </div>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="name" placeholder="Enter your name" type="text">
+                    </div>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm Password" type="password">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Register</button>
+                </form>
+            </div>
+        </main>
+    </div>
+{% endblock %}
